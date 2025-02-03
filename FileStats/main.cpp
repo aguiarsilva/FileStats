@@ -16,6 +16,12 @@ int main()
 
 	std::vector<int> inputScores;
 
+	if (!infile)
+	{
+		std::cout << "Error opening file. Bailing out." << std::endl;
+		return 1;
+	}
+
 	while (!infile.eof())
 	{
 		infile >> inputScore;
@@ -38,9 +44,10 @@ int main()
 
 	avg = sumInputs / totalInputs;
 
-	std::cout << "Max Score : " << max << std::endl;
-	std::cout << "Min Score : " << min << std::endl;
-	std::cout << "Average Score : " << avg << std::endl;
+	std::cout << "Statistics: " << std::endl;
+	std::cout << "\tMax Score : " << max << std::endl;
+	std::cout << "\tMin Score : " << min << std::endl;
+	std::cout << "\tAverage Score : " << avg << std::endl;
 
 
 
